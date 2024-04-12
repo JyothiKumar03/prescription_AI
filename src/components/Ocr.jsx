@@ -26,7 +26,7 @@ export default function Ocr() {
       const response = await axios.post('https://prescription-ai-server.onrender.com/image/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          // 'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Origin': '*',
         },
       });
 // debugger;
@@ -60,7 +60,7 @@ export default function Ocr() {
       });
 
       const data = response.data;
-
+      console.log('data received',data)
       if (response.status === 200) {
         setAdditionalData(data);
       } else {
