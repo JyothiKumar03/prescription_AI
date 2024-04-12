@@ -23,7 +23,7 @@ export default function Ocr() {
       const formData = new FormData();
       formData.append('file', selectedFile);
 // debugger;
-      const response = await axios.post('http://localhost:5000/image/upload', formData, {
+      const response = await axios.post('https://prescription-ai-server.onrender.com/image/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           // 'Access-Control-Allow-Origin': '*',
@@ -53,7 +53,7 @@ export default function Ocr() {
     try {
       setIsLoadingData(true);
 
-      const response = await axios.get('http://localhost:5000/image/upload', {
+      const response = await axios.get('https://prescription-ai-server.onrender.com/image/upload', {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
